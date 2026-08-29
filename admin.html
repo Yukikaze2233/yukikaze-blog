@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>博客管理 · Yukikaze 的小站</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="./static/img/favicon.ico">
+    <link rel="stylesheet" href="./static/vendor/github-dark.min.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+
+<body class="admin-body">
+    <div class="bg" aria-hidden="true"></div>
+
+    <div class="admin-wrap">
+        <aside class="sidebar sidebar--compact">
+            <div class="avatar avatar--small" style="background-image: url('./static/img/logo.png');" aria-label="头像"></div>
+            <a class="site-name site-name--link" href="./index.html">Yukikaze</a>
+            <p class="site-bio">博客管理</p>
+            <a class="back-link" href="./index.html">← 返回首页</a>
+        </aside>
+
+        <main class="main">
+            <section class="admin-panel">
+                <header class="admin-header">
+                    <div>
+                        <p class="hero-kicker">Dashboard</p>
+                        <h2 class="hero-title" style="font-size:34px;">博客管理</h2>
+                    </div>
+                    <button class="btn btn-ghost" id="btnNew" type="button">＋ 新建文章</button>
+                </header>
+
+                <div class="token-box" id="tokenBox">
+                    <p class="token-hint">输入一个具有 <code>repo</code> 权限的 GitHub Personal Access Token，保存后即可在网页中新建 / 编辑 / 删除文章。</p>
+                    <div class="token-form">
+                        <input id="tokenInput" type="password" placeholder="ghp_..." autocomplete="off">
+                        <button class="btn" id="btnSaveToken" type="button">保存</button>
+                    </div>
+                    <p class="token-help">
+                        去 <a href="https://github.com/settings/tokens/new?scopes=repo&description=yukikaze-blog-admin" target="_blank" rel="noopener">GitHub 创建 Token</a>。
+                        Token 只保存在当前浏览器 localStorage，不会写入仓库，也不会发送到任何第三方服务器。
+                    </p>
+                </div>
+
+                <div id="editorBox" hidden>
+                    <div class="editor-toolbar">
+                        <span class="editor-status" id="editorStatus">新建文章</span>
+                        <div class="toolbar-actions">
+                            <button class="btn btn-ghost" id="btnCancel" type="button">取消</button>
+                            <button class="btn" id="btnSave" type="button">保存文章</button>
+                        </div>
+                    </div>
+
+                    <input class="field" id="fieldSlug" type="text" placeholder="slug（英文文件名，例如 my-first-post）" autocomplete="off">
+                    <input class="field" id="fieldTitle" type="text" placeholder="文章标题" autocomplete="off">
+                    <div class="field-row">
+                        <input class="field" id="fieldDate" type="date">
+                        <input class="field" id="fieldTags" type="text" placeholder="标签，用英文逗号分隔：RoboMaster, C++">
+                    </div>
+                    <textarea class="field field-excerpt" id="fieldExcerpt" rows="2" placeholder="一句话摘要（会显示在首页列表）"></textarea>
+                    <textarea class="editor" id="editor" spellcheck="false" placeholder="在这里写 Markdown…"></textarea>
+                    <div class="preview-box">
+                        <div class="preview-title">预览</div>
+                        <div class="post-body preview-body" id="preview"></div>
+                    </div>
+                </div>
+
+                <div class="post-list" id="adminList">
+                    <div class="post-card"><h3>加载中…</h3><p>正在读取文章列表。</p></div>
+                </div>
+            </section>
+
+            <div class="toast" id="toast" hidden></div>
+        </main>
+    </div>
+
+    <script src="./static/vendor/marked.min.js"></script>
+    <script src="./static/vendor/highlight.min.js"></script>
+    <script src="./static/vendor/katex/katex.min.js"></script>
+    <script src="./static/vendor/katex/auto-render.min.js"></script>
+    <script src="./static/js/script.js"></script>
+</body>
+
+</html>

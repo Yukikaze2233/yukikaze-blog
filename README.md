@@ -32,6 +32,24 @@ python3 scripts/build_posts_index.py
 
 3. 提交并推送。首页文章列表会自动读取 `posts/index.json`。
 
+> 小技巧：也可以直接用
+>
+> ```bash
+> python3 scripts/new_post.py "文章标题" --tags "RoboMaster, C++"
+> ```
+>
+> 它会自动生成草稿并刷新索引。
+
+## 网页管理后台
+
+打开 <http://127.0.0.1:8000/admin.html>：
+
+1. 到 GitHub 创建一个带 `repo` 权限的 Personal Access Token（页面里有入口）。
+2. 粘贴保存。Token 只存在浏览器 localStorage，不写入仓库。
+3. 之后即可在网页中新建 / 编辑 / 删除 `posts/` 下的文章。
+
+GitHub Actions 也会在 `posts/**.md` 推送时自动重建 `posts/index.json`，所以在 GitHub 网页端直接新建或修改 Markdown 文章同样会生效。
+
 ## 目录结构
 
 ```text
@@ -42,6 +60,7 @@ scripts/                索引生成脚本
 static/
   css/style.css
   js/script.js
+  js/admin.js        管理后台逻辑
   img/                  头像、背景、favicon
   vendor/               markdown-it / highlight.js / KaTeX（本地化）
 ```
@@ -59,3 +78,4 @@ static/
 - 代码高亮：highlight.js
 - 数学公式：KaTeX
 - 阅读进度条、文章列表：原生 JS
+- 网页管理：GitHub Contents API（无自建后端）
