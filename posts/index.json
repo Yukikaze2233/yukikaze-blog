@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "how-this-blog-is-built",
+    "title": "博客搭建手记：从静态主页到真正的博客",
+    "date": "2026-08-29",
+    "excerpt": "用原生 HTML、Markdown 与少量 JavaScript 搭出一个能渲染文章、代码高亮和公式的博客。",
+    "tags": [
+      "Blog"
+    ],
+    "draft": false
+  },
+  {
+    "slug": "hello-blog",
+    "title": "当算法工程师开始写博客",
+    "date": "2026-08-28",
+    "excerpt": "这篇文章是本站的起点。以后我会在这里更新技术笔记与项目复盘。",
+    "tags": [
+      "About"
+    ],
+    "draft": false
+  },
+  {
+    "slug": "robomaster-engineering-log",
+    "title": "RoboMaster 工程日志",
+    "date": "2026-08-20",
+    "excerpt": "从 RMCS 到雷达、自动瞄准与离线强化学习，记录我在赛场上走过的路。",
+    "tags": [
+      "RoboMaster"
+    ],
+    "draft": false
+  }
+]

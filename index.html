@@ -7,16 +7,19 @@
     <title>Yukikaze 的小站</title>
     <meta name="description" content="Yukikaze 的个人博客：Robotics、Computer Vision、RoboMaster 工程笔记。">
     <link rel="icon" href="./static/img/favicon.ico">
+    <link rel="stylesheet" href="./static/vendor/katex/katex.min.css">
+    <link rel="stylesheet" href="./static/vendor/github-dark.min.css">
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body>
     <div class="bg" aria-hidden="true"></div>
+    <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
     <div class="layout">
         <aside class="sidebar">
             <div class="avatar" style="background-image: url('./static/img/logo.png');" aria-label="头像"></div>
             <h1 class="site-name">Yukikaze</h1>
-            <p class="site-bio">Algorithm Engineer · Robotics & Computer Vision</p>
+            <p class="site-bio">Algorithm Engineer · Robotics &amp; Computer Vision</p>
             <p class="site-location">Nanjing University of Science and Technology</p>
             <div class="tags">
                 <span>Robotics</span><span>Computer Vision</span><span>C++</span><span>ROS2</span><span>SLAM</span>
@@ -39,17 +42,11 @@
 
             <section class="section">
                 <h2 class="section-title"><span>博客文章</span></h2>
-                <div class="post-list">
-                    <article class="post-card">
-                        <h3>《RoboMaster 工程日志》</h3>
-                        <p>从 RMCS 到雷达、自动瞄准与离线强化学习，记录我在赛场上走过的路。</p>
-                        <div class="post-meta"><time datetime="2026-08">2026.08</time><span>RoboMaster</span></div>
-                    </article>
-                    <article class="post-card">
-                        <h3>《当算法工程师开始写博客》</h3>
-                        <p>这篇文章是本站的起点。以后我会在这里更新技术笔记与项目复盘。</p>
-                        <div class="post-meta"><time datetime="2026-08">2026.08</time><span>About</span></div>
-                    </article>
+                <div class="post-list" id="postList">
+                    <div class="post-card">
+                        <h3>加载中…</h3>
+                        <p>正在读取文章列表。</p>
+                    </div>
                 </div>
             </section>
 
@@ -87,6 +84,10 @@
         </main>
     </div>
 
+    <script src="./static/vendor/markdown-it.min.js"></script>
+    <script src="./static/vendor/highlight.min.js"></script>
+    <script src="./static/vendor/katex/katex.min.js"></script>
+    <script src="./static/vendor/katex/auto-render.min.js"></script>
     <script src="./static/js/script.js"></script>
 </body>
 
